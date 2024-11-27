@@ -5,13 +5,15 @@
     box-sizing: border-box;
 }
 
-.container{
+.container {
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #c183fa, #f04b4c);
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #c183fa, #f04b4c);
     align-items: center;
     justify-content: center;
+    background-attachment: fixed;
 }
 
 .todo-app{
@@ -20,7 +22,7 @@
     background: linear-gradient(135deg, #f9f2fe,#fdedee);
     margin: 100px auto 20px;
     padding: 20px 30px 20px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .todo-app h2{
@@ -30,7 +32,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px; 
+    margin-bottom: 25px;
+    margin-top: 10px;
 }
 
 .input-row{
@@ -62,7 +65,7 @@
     border: none;
     border-radius: 30px;
     background: linear-gradient(90deg,#47d984, #3c83f3);
-    padding: 0px 5px;
+    padding: 0px 5px 0px 5px;
     color: white;
     cursor: pointer;
 }
@@ -75,5 +78,50 @@
 ul li{
     list-style: none;
     font-size: 17px;
-    padding: 12px;
+    padding: 25px 8px 25px 50px;
+    position: relative;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    background-image: url(../assets/uncheck-mark-square-icon.webp);
+    background-size: cover;
+    background-position: center;
+    top: 23px;
+    left: 15px;
+}
+
+ul li.checked{
+    color: #90959f;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(../assets/check-mark-square-icon.webp);
+}
+
+ul li span{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fde0e0;
+    background-image: url("../assets/delete.png ");
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+ul li span:hover{
+    background-color:  #fdeded;
 }
