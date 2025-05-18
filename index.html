@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
     <div class="container"> 
         <div class="todo-app">
-            <h2> Todo App </h2>
+            <h2> To-do List </h2>
             <div class="input-row">
-                <input type="text" id="input-box" placeholder="Add a new todo">
+                <input type="text" id="input-box" placeholder="Add a new task">
                 <button onclick="AddTask()"> 
                     <h3> + </h3> 
                     <h4> Add </h4> 
                 </button>
             </div>
+            <div class="filter-row">
+                <button data-filter="all">All</button>
+                <button data-filter="active">Active</button>
+                <button data-filter="completed">Completed</button>
+            </div>
+
             <ul id="list-container">
             </ul>
+            <div class="footer">
+                <h4> Created by Vladyslav Kyshchun </h4>
+                <h4> © 2025 </h4>
         </div>
     </div>
     <script src="scripts/script.js"> </script>
